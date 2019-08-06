@@ -5,11 +5,11 @@
 @import './typography.css';
 
 body {
-  background-color: var(--orange);
-  padding: 5px 0;
+  border-top: 5px solid var(--orange);
+  border-bottom: 5px solid var(--orange);
 }
 
-header, main {
+body, header, main {
   background-color: var(--tan);
 }
 
@@ -64,11 +64,8 @@ footer {
   font-size: x-large;
 
   @media (--xs-viewport-only) {
-    background-color: var(--orange);
-    .btn {
-      border-radius: 0;
-      box-shadow: none;
-    }
+    margin: 1rem;
+    margin-bottom: calc(1rem + env(safe-area-inset-bottom));
   }
 
   @media (--sm-viewport) {
@@ -108,9 +105,15 @@ table {
   }
 }
 
+.sponsor + .sponsor {
+  margin-left: 20px;
+}
+
 select {
   appearance: none;
-  border: solid 1px var(--lighter-gray);
   background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjE2Ij48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00IDE2TDAgOWg4TTQgMGw0IDdIMCIvPjwvc3ZnPg==) no-repeat right 10px center;
+  border: solid 1px var(--lighter-gray);
+  color: var(--gray);
+  float: right;
   padding: 0 10px;
 }
